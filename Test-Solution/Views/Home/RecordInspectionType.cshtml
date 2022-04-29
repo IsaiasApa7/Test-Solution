@@ -1,0 +1,27 @@
+﻿@model RecordInspectionTypeViewModel
+@{
+    ViewData["Title"] = "Inspection Type Name record";
+}
+
+<h1>Inspection Type Name record</h1>
+
+<form method="post" asp-controller="Home" asp-action="RecordInspectionType">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+        <div class="form-group">
+            <label asp-for="TypeName" ></label>
+            <input asp-for="TypeName" class="form-control"/>
+            <span asp-validation-for="TypeName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BuildingID" ></label>
+            <select asp-for="BuildingID" asp-items="Model.Buildings" class="form-control"></select>
+            <span asp-validation-for="BuildingID" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+             <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+       
+
+</form>
