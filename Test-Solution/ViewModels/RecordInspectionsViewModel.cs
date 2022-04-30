@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Test_Solution.ViewModels
 {
+    //[Authorize(Roles = "Inspector")]
     public class RecordInspectionsViewModel
     {
         [Required(ErrorMessage = "This field is required")]

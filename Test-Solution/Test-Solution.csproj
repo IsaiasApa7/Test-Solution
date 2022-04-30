@@ -8,6 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\alt\adminlte.components.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.components.min.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.core.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.core.min.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.extra-components.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.extra-components.min.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.light.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.light.min.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.pages.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.pages.min.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.plugins.css.map" />
+    <None Include="wwwroot\css\alt\adminlte.plugins.min.css.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.16" />
@@ -15,6 +30,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.16" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Nito.AsyncEx.Context" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

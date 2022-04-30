@@ -1,27 +1,36 @@
 ﻿@model RecordBuildingViewModel
 @{
     ViewData["Title"] = "Building Record";
+    ViewData["BuildinsRecord"] = "active";
 }
-
-<h1>Building Record</h1>
-
-<form method="post" asp-controller="Home" asp-action="RecordBuilding">
-
-    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
-        <div class="form-group">
-            <label asp-for="BuildingName" ></label>
-            <input asp-for="BuildingName" class="form-control"/>
+<!-- Default box -->
+<div class="row">
+  <div class="col-6 mx-auto">
+    <div class="card mt-3">
+      <div class="card-header">
+        <h3 class="card-title">Building Record</h3>
+      </div>
+      <div class="card-body">
+        <form method="post" asp-controller="Home" asp-action="RecordBuilding">
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="form-group">
+            <label asp-for="BuildingName"></label>
+            <input asp-for="BuildingName" class="form-control" />
             <span asp-validation-for="BuildingName" class="text-danger"></span>
-        </div>
-         <div class="form-group">
-            <label asp-for="Address" ></label>
-            <input asp-for="Address" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label asp-for="Address"></label>
+            <input asp-for="Address" class="form-control" />
             <span asp-validation-for="Address" class="text-danger"></span>
-        </div>
+          </div>
 
-        <div class="mb-3">
-             <button type="submit" class="btn btn-primary">Save</button>
-        </div>
-       
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-</form>
+      

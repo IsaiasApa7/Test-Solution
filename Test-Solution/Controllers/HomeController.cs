@@ -28,6 +28,7 @@ namespace Test_Solution.Controllers
             _userManager = userManager;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();
@@ -37,6 +38,8 @@ namespace Test_Solution.Controllers
         {
             return View();
         }
+
+     
 
         [Authorize]
         public IActionResult RecordInspection()
@@ -105,7 +108,7 @@ namespace Test_Solution.Controllers
                 }
 
             }
-            return View(rivm);
+            return RecordInspection();
         }
 
 
@@ -141,7 +144,7 @@ namespace Test_Solution.Controllers
 
                 }
             }
-                return View(rbvm);
+                return RecordBuilding();
         }
 
         [Authorize]
@@ -189,7 +192,7 @@ namespace Test_Solution.Controllers
 
                 }
             }
-            return View(ritvm);
+            return RecordInspectionType();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
