@@ -1,14 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     ViewData["Home"] = "active";
+    List<Inspection> Satisfactory = (List<Inspection>) ViewData["SatisfactoryInspections"];
+    List<Inspection> Unsatisfactory = (List<Inspection>) ViewData["UnsatisfactoryInspections"];
+    int Satisfac = Satisfactory.Count;
+    int Unsatisfac = Unsatisfactory.Count;
+    //List<Inspection> Majors = (List<Inspection>) ViewData["Top3Majors"];
+    //List<Inspection> Minors = (List<Inspection>) ViewData["Top3Minors"];
+
+
 }
 <div class="row mt-3">
     <div class="col-6">
         <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>@Satisfac<sup style="font-size: 20px"></sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Total Satisfactory Inspections</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -18,9 +26,9 @@
      <div class="col-6">
         <div class="small-box bg-danger">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>@Unsatisfac<sup style="font-size: 20px"></sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Total Unsatisfactory Inspections</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -46,25 +54,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                 @*   @for(int i = 0; i <= totalSatis ; i++)
+                    {
+                        <tr>
+                          <td>1</td>
+                          <td>@Majors[i].UserId</td>
                       
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                     
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                     
+                        </tr>
+                    }*@
                       
                     </tr>
                   </tbody>
@@ -88,27 +85,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                 @*   @for(int i = 0; i <= totalSatis ; i++)
+                    {
+                        <tr>
+                          <td>1</td>
+                          <td>@Minors[i].UserId</td>
                       
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                     
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                     
-                      
-                    </tr>
+                        </tr>
+                    }*@          
+                    
                   </tbody>
                 </table>
               </div>

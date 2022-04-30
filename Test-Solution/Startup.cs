@@ -11,6 +11,7 @@ using Nito.AsyncEx;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 using Test_Solution.Data;
 using Test_Solution.Models.dbModels;
@@ -79,6 +80,7 @@ namespace Test_Solution
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            //property needed to be excluded
             //AsyncContext.Run(async () => { await Seed.SeedUsersAndRolesAsync(app); });
             Seed.SeedData(app);
         }

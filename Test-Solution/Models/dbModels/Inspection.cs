@@ -36,5 +36,7 @@ namespace Test_Solution.Models.dbModels
         [ForeignKey(nameof(StatusId))]
         [InverseProperty("Inspections")]
         public virtual Status Status { get; set; }
+
+       
     }
 }

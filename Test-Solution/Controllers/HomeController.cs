@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -31,15 +32,13 @@ namespace Test_Solution.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            ViewData["SatisfactoryInspections"] = _dbContext.Inspections.FromSqlRaw("SELECT  A.ID, A.Description, A.Date, A.StatusID, A.InspectionTypeID, A.UserID FROM Inspections A INNER JOIN InspectionTypes B ON A.InspectionTypeID = B.ID INNER JOIN Statuses C ON A.StatusID = C.ID WHERE A.StatusID = 1").ToList();
+            ViewData["UnsatisfactoryInspections"] = _dbContext.Inspections.FromSqlRaw("SELECT  A.ID, A.Description, A.Date, A.StatusID, A.InspectionTypeID, A.UserID FROM Inspections A INNER JOIN InspectionTypes B ON A.InspectionTypeID = B.ID INNER JOIN Statuses C ON A.StatusID = C.ID WHERE A.StatusID = 2").ToList();
+            //ViewData["Top3Majors"] = _dbContext.Inspections.FromSqlRaw("SELECT TOP 3 B.UserName, COUNT(A.StatusID) InspectionsSatisfactory,A.ID, A.Description, A.Date, A.StatusID, A.InspectionTypeID, A.UserID FROM Inspections A INNER JOIN AspNetUsers B on A.UserID = B.Id WHERE A.StatusID = 1 GROUP BY B.UserName,A.ID, A.Description, A.Date, A.StatusID, A.InspectionTypeID, A.UserID ORDER BY InspectionsSatisfactory DESC").ToList();
+            //ViewData["Top3Minors"] = _dbContext.Inspections.FromSqlRaw("SELECT TOP 3 B.UserName, COUNT(A.StatusID) InspectionsSatisfactory,A.ID, A.Description, A.Date, A.StatusID, A.InspectionTypeID, A.UserID FROM Inspections A INNER JOIN AspNetUsers B on A.UserID = B.Id WHERE A.StatusID = 2 GROUP BY B.UserName,A.ID, A.Description, A.Date, A.StatusID, A.InspectionTypeID, A.UserID ORDER BY InspectionsSatisfactory DESC").ToList();
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-     
 
         [Authorize]
         public IActionResult RecordInspection()
